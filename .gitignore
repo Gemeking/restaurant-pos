@@ -1,0 +1,12 @@
+# XAMPP / PHP
+*.log
+*.cache
+/vendor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
