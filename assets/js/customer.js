@@ -226,12 +226,8 @@ function placeOrder() {
         data:        JSON.stringify(payload),
         success: function (res) {
             if (res.success) {
-                bootstrap.Modal.getInstance('#cartModal')?.hide();
-                $('#menuContent').hide();
-                $('#catNav').hide();
-                $('#cartBar').hide();
-                $('#orderSuccess').show();
-                cart = {};
+                // Redirect customer to live order-tracking page
+                window.location.href = BASE_URL + 'customer_status.php?order_id=' + res.order_id;
             } else {
                 alert('Error: ' + (res.error || 'Could not place order'));
                 $('#btnPlaceOrder').prop('disabled', false).html('<i class="fa fa-paper-plane me-2"></i>Place Order');
